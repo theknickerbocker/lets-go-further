@@ -1,0 +1,11 @@
+# Intellij
+.idea
+
+# Artifacts
+snippetbox
+
+# Tmp files
+**~
+
+# TLS
+tls/
