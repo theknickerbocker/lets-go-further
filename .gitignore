@@ -6,6 +6,7 @@ snippetbox
 
 # Tmp files
 **~
+tmp/
 
 # TLS
 tls/

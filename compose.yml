@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:14
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    hostname: localhost
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: greenlight
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+    ports:
+      - "5432:5432"
