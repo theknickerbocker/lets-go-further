@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	debug "runtime/debug"
 )
 
 func (app *application) logError(r *http.Request, err error) {
@@ -11,7 +12,7 @@ func (app *application) logError(r *http.Request, err error) {
 		uri    = r.URL.RequestURI()
 	)
 
-	app.logger.Error(err.Error(), "method", method, "uri", uri)
+	app.logger.Error(err.Error(), "method", method, "uri", uri, "stack", string(debug.Stack()))
 }
 
 func (app *application) errorResponse(w http.ResponseWriter, r *http.Request, status int, message any) {
