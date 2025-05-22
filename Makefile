@@ -1,4 +1,4 @@
-export GREENLIGHT_DB_DSN="postgresql://postgres:password@localhost:5432/greenlight?sslmode=disable"
+export GREENLIGHT_DB_DSN=postgresql://postgres:password@localhost:5432/greenlight?sslmode=disable
 
 server:
 	docker compose up --build -d

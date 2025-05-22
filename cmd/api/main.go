@@ -48,6 +48,7 @@ func main() {
 
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 
+	logger.Info(cfg.db.dsn)
 	db, err := openDB(cfg)
 	if err != nil {
 		logger.Error(err.Error())
