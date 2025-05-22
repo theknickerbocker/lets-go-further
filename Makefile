@@ -2,7 +2,7 @@ export GREENLIGHT_DB_DSN=postgresql://postgres:password@localhost:5432/greenligh
 
 server:
 	docker compose up --build -d
-	go run ./cmd/api
+	go run ./cmd/api/
 
 db-connect:
 	pgcli postgresql://postgres:password@localhost:5432/greenlight
